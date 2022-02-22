@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.col {
+    height: 500px;
+}
+
+.row {
+    border: 0.15rem solid black;
+}
+
+.row > div:first-child {
+    background-color: orange;
+    color: black;
+    border-right: 0.15rem solid black;
+    animation-duration: 3s, 3s;
+    animation-name: myfirst, myfirst-h1;
+    animation-iteration-count: infinite, infinite;
+    /* animation-direction: alternate; */
+}
+
+.row > div:nth-child(2) {
+    background-color: white;
+    color: black;
+    border-right: 0.15rem solid black;
+}
+
+.row > div:last-child {
+    background-color: blue;
+    color: white;
+    position: relative;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+main {
+    border: 1rem solid white;
+}
+
+@keyframes myfirst /* Firefox */ {
+    0% {
+        background: orange;
+    }
+    50% {
+        background: blue;
+    }
+    100% {
+        background: orange;
+    }
+}
+
+@keyframes myfirst-h1 {
+    0% {
+        color: black;
+    }
+    /* 50% {
+        color: white;
+    } */
+    100% {
+        color: white;
+    }
+}
+
+/* 
+    key frames for "two"
+*/
+
+[data-item="two"] {
+    animation-duration: 2400ms;
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+/*
+    key frames for "three"
+*/
+
+[data-item="three"] {
+    position: absolute;
+    /* top: 0; */
+    bottom: 0;
+    animation: MoveUpDown 3s ease infinite;
+}
+
+@keyframes MoveUpDown {
+    0%,
+    100% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 400px;
+    }
+}
